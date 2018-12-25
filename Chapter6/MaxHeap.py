@@ -56,30 +56,6 @@ class MaxHeap(object):
             self.data[j], self.data[i] = self.data[i], self.data[j]
             i = j
 
-    def heapify(self, i):
-        """维护堆性质
-
-        Args:
-            i(int): 位置下标
-        """
-        while True:
-            left_child = i * 2
-            right_child = i * 2 + 1
-
-            if left_child <= self._size and self.data[left_child] > self.data[i]:
-                largest = left_child
-            else:
-                largest = i
-
-            if right_child <= self._size and self.data[right_child] > self.data[largest]:
-                largest = right_child
-
-            if largest != i:
-                self.data[i], self.data[largest] = self.data[largest], self.data[i]
-                i = largest
-            else:
-                return
-
     def build(self):
         """建堆
         """
